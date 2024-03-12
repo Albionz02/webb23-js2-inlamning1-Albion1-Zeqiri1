@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    margin-top: 4vh;
+
+}
+.header1{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+
+
+}
+body{
+    background-color:  rgb(36, 200, 200);
+    background-attachment: fixed;
+}
+
+
+.img01{
+    width: 50px;
+    height: 50px;
+}
+.bt{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+.bt01{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(240, 255, 240, 0.563);
+    height: 20vh;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+#choices{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.r, .p, .s{
+    color:#191919;
+    font-weight: 300;
+    font-family:fantasy;
+
+}
+.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+form{
+font-family: cursive;
+font-size: 3vh;
+}
+.hello{
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+    font-size: 3vh;
+    margin-top: 5vh;
+}
+.div2{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px 20px 5px;
+    background-color: aquamarine;
+    height: 30vh;
+}
+.div1{
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    margin-top: 5vh;
+
+}
+ul{
+    list-style: none;
+
+}
+#results, #players{
+    font-family: cursive;
+    font-size: 3vh;
+
+}
+.btn1{
+    font-family: cursive;
+    font-size: 3vh;
+    padding: 1vh;
+   border: 2px solid #FFF;
+   color: #FFF;
+   margin: 50px auto;
+   background: transparent;
+   transition: .2s ease-in-out 0s;
+   margin-left: 5vh;
+
+}
+.btn1:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    background: #FFF;
+    color: #000;
+    }

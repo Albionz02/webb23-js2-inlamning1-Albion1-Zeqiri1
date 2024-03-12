@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sten Sax Påse</title>
+    <script src="./main.js" type="module"></script>
+    <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+    <h1 class="header">
+        <div class="header1">  
+            <span class="r">Rock</span>   <span class="p">Paper</span> <span class="s">Scissors</span>
+
+        </div>
+       
+    </h1>
+    <div class="form">
+        <div id="player-form">
+            <form>
+                <label for="player-name">Enter Your Name:</label>
+                <input type="text" id="player-name" required>
+                <button type="submit" class="btn1">Start Game</button>
+               
+    
+            </form>
+        </div>
+    </div>
+    
+
+    <div class="hello">
+        <p> Hello  <span id="player-name-display"></span> and welcome to this game!</p>
+    
+    </div>
+    
+
+    
+   
+    <div id="choices" class="hidden">
+        <div class="bt01">
+            <button class="bt" id="rock"> <img src="imgg/stone.png" class="img01" alt=""> </button>
+        <button class="bt" id="paper"> <img src="imgg/icons8-paper-96.png" class="img01" alt=""></button>
+        <button class="bt" id="scissors"> <img src="imgg/icons8-scissors-96.png" class="img01" alt=""></button>
+        </div>
+
+        
+        
+    </div>
+    <div class="div1">
+        <div class="div2">
+            <div id="results" class="hidden">
+                <h2>Results</h2>
+                <p>Player:<span id="player-choice"></span></p>
+                <p>Computer: <span id="computer-choice"></span></p>
+                <p>Winner: <span id="winner"></span></p>
+                <p>Player Score: <span id="player-score">0</span></p>
+            </div>
+            <div id="players">
+                <h2>Top 5 players</h2>
+                <ul id="highscores-list"></ul>
+            </div>
+            
+        </div>
+        
+
+
+    </div>
+    
+
+   
+</body>
+</html>
