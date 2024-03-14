@@ -1,5 +1,5 @@
 export async function getCountries() {
-    const url = 'https://restcountries.com/v3.1/all'; // Ändrad till att hämta alla länder
+    const url = 'https://restcountries.com/v3.1/all'; 
     try {
         const response = await fetch(url);
         if (!response.ok) {

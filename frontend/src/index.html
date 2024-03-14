@@ -6,68 +6,124 @@
     <title>Sten Sax Påse</title>
     <script src="./main.js" type="module"></script>
     <link rel="stylesheet" href="css/style.css">
-  
+    <style>
+        
+        .header {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 36px;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+       
+        .form {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+    
+        .hello {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+            font-family: Arial, sans-serif;
+        }
+
+    
+        .choices {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .choices button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .choices button:hover {
+            background-color: #0056b3;
+        }
+
+      
+        .results {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .results p {
+            margin: 10px 0;
+        }
+
+     
+        .players {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .players h2 {
+            margin-bottom: 10px;
+        }
+
+        .players ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .players li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
     <h1 class="header">
-        <div class="header1">  
-            <span class="r">Rock</span>   <span class="p">Paper</span> <span class="s">Scissors</span>
-
-        </div>
-       
+        Sten Sax Påse
     </h1>
     <div class="form">
         <div id="player-form">
             <form>
-                <label for="player-name">Enter Your Name:</label>
+                <label for="player-name">Skriv ditt namn</label>
                 <input type="text" id="player-name" required>
-                <button type="submit" class="btn1">Start Game</button>
-               
-    
+                <button type="submit">Starta matchen</button>
             </form>
         </div>
     </div>
-    
 
     <div class="hello">
-        <p> Hello  <span id="player-name-display"></span> and welcome to this game!</p>
-    
+        <p>Hej! <span id="player-name-display"></span> Lycka till!</p>
     </div>
-    
 
-    
-   
-    <div id="choices" class="hidden">
-        <div class="bt01">
-            <button class="bt" id="rock"> <img src="imgg/stone.png" class="img01" alt=""> </button>
-        <button class="bt" id="paper"> <img src="imgg/icons8-paper-96.png" class="img01" alt=""></button>
-        <button class="bt" id="scissors"> <img src="imgg/icons8-scissors-96.png" class="img01" alt=""></button>
-        </div>
-
-        
-        
+    <div class="choices">
+        <button id="rock">Sten</button>
+        <button id="paper">Papper</button>
+        <button id="scissors">Sax</button>
     </div>
-    <div class="div1">
-        <div class="div2">
-            <div id="results" class="hidden">
-                <h2>Results</h2>
-                <p>Player:<span id="player-choice"></span></p>
-                <p>Computer: <span id="computer-choice"></span></p>
-                <p>Winner: <span id="winner"></span></p>
-                <p>Player Score: <span id="player-score">0</span></p>
-            </div>
-            <div id="players">
-                <h2>Top 5 players</h2>
-                <ul id="highscores-list"></ul>
-            </div>
-            
-        </div>
-        
 
-
+    <div class="results hidden">
+        <h2>Resultat</h2>
+        <p>Spelare: <span id="player-choice"></span></p>
+        <p>Dator: <span id="computer-choice"></span></p>
+        <p>Vinnare: <span id="winner"></span></p>
+        <p>Spelares resultat: <span id="player-score">0</span></p>
     </div>
-    
 
-   
+    <div class="players">
+        <h2>Top 5 spelare</h2>
+        <ul id="highscores-list"></ul>
+    </div>
 </body>
 </html>

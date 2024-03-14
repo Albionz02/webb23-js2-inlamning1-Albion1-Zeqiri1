@@ -10,12 +10,10 @@ app.use(function(req, res, next) {
     next();
 });
 
-
 const validateNewScore = [
-    body('name').notEmpty().withMessage('Name is required'),
+    body('name').notEmpty().withMessage('Please provide a name'),
     body('score').isInt({ min: 0 }).withMessage('Score must be a non-negative integer'),
 ];
-
 
 function handleValidationErrors(req, res, next) {
     const errors = validationResult(req);
@@ -27,13 +25,12 @@ function handleValidationErrors(req, res, next) {
 
 app.get('/api/highscores', (req, res) => {
     try {
-        const rawHighscores = fs.readFileSync('highscores.json', 'utf8');
-        const highscores = JSON.parse(rawHighscores);
-       
+        const highscoresData = fs.readFileSync('highscores.json', 'utf8');
+        const highscores = JSON.parse(highscoresData);
         res.json(highscores);
     } catch (error) {
         console.error('Error reading highscores.json:', error);
-        res.status(500).json({ error: 'An error occurred' });
+        res.status(500).json({ error: 'An error occurred while fetching highscores' });
     }
 });
 
@@ -41,8 +38,8 @@ app.post('/api/highscores', validateNewScore, handleValidationErrors, (req, res)
     const newScore = req.body;
 
     try {
-        const rawHighscores = fs.readFileSync('highscores.json', 'utf8');
-        const highscores = JSON.parse(rawHighscores);
+        const highscoresData = fs.readFileSync('highscores.json', 'utf8');
+        const highscores = JSON.parse(highscoresData);
 
         highscores.push(newScore);
         highscores.sort((a, b) => b.score - a.score);
@@ -51,33 +48,33 @@ app.post('/api/highscores', validateNewScore, handleValidationErrors, (req, res)
         fs.writeFile('highscores.json', JSON.stringify(highscores), (err) => {
             if (err) {
                 console.error(err);
-                res.status(500).json({ error: 'An error occurred' });
+                res.status(500).json({ error: 'An error occurred while adding the score' });
             } else {
-                res.json({ message: 'Score added to list' });
+                res.json({ message: 'Score successfully added' });
             }
         });
     } catch (error) {
         console.error('Error with highscores.json:', error);
-        res.status(500).json({ error: 'An error occurred' });
+        res.status(500).json({ error: 'An error occurred while processing the score' });
     }
 });
 
 app.delete('/api/highscores/reset', (req, res) => {
     const initialHighscores = [
-        { name: 'Spelare 1', score: 0 },
-        { name: 'Spelare 2', score: 0 },
-        { name: 'Spelare 3', score: 0 },
-        { name: 'Spelare 4', score: 0 },
-        { name: 'Spelare 5', score: 0 }
+        { name: 'Player 1', score: 0 },
+        { name: 'Player 2', score: 0 },
+        { name: 'Player 3', score: 0 },
+        { name: 'Player 4', score: 0 },
+        { name: 'Player 5', score: 0 }
     ];
 
     fs.writeFile('highscores.json', JSON.stringify(initialHighscores), (err) => {
         if (err) {
             console.error(err);
-            res.status(500).json({ error: 'An error occurred' });
+            res.status(500).json({ error: 'An error occurred while resetting the highscores' });
             return;
         }
-        res.json({ message: 'Highscorelist updated' });
+        res.json({ message: 'Highscores successfully reset' });
     });
 });
 
